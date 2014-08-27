@@ -1,0 +1,21 @@
+<%= form_for([@article, @article.comments.build]) do |f| %>
+  <p>
+    <%= f.label :commenter %><br>
+    <%= f.text_field :commenter %>
+    <span id="errorCommenter" style="color: red; display: none;">*Ingrese su Nombre</span>
+  </p>
+  <p>
+    <%= f.label :body %><br>
+    <%= f.text_area :body %>
+    <span id="errorBody" style="color: red; display: none;">*Ingrese un Comentario</span>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<script type="text/javascript">
+  $(function(){
+    comment_validation();
+  });
+</script>
